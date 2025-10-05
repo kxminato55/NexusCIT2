@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join Nexus Group</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #17B88A;
+      --background: #0e0e0e;
+      --surface: #161616;
+      --text: #fff;
+      --muted: #aaa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    header img {
+      max-width: 90%;
+      height: auto;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .card {
+      background: var(--surface);
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1;
+      min-width: 300px;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+
+    form {
+      background: var(--surface);
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #139a72;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 768px) {
+      .two-columns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://imgur.com/2RVdQvd.png" alt="Nexus Banner">
+</header>
+
+<nav>
+  <a href="#requirements">Requirements</a>
+  <a href="#application">Apply Now</a>
+</nav>
+
+<section id="requirements">
+  <h2>📜 Rules & Requirements</h2>
+  <div class="two-columns">
+    <div class="card">
+      <h3>⚠️ Rules</h3>
+      <ul>
+        <li>No editing after submission</li>
+        <li>Original content only</li>
+        <li>No multi-group applying</li>
+        <li>Use proper format</li>
+        <li>Respect Nexus members</li>
+        <li>7-day wait after blacklist removal</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🎯 Requirements</h3>
+      <ul>
+        <li>300+ in-game hours</li>
+        <li>5,000+ kills</li>
+        <li>Good English communication</li>
+        <li>Clean punish log (30 days)</li>
+        <li>Active in-game presence</li>
+        <li>No toxic or troublemaker history</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="application">
+  <h2>📝 Application Form</h2>
+
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+    <label>Account Name</label>
+    <input type="text" name="Account Name" required>
+
+    <label>In-game Name</label>
+    <input type="text" name="In-game Name" required>
+
+    <label>Country & ID</label>
+    <input type="text" name="Country and ID" required>
+
+    <label>MTA Serial</label>
+    <input type="text" name="MTA Serial" required>
+
+    <label>English Skills (0-10)</label>
+    <input type="number" name="English Skills" min="0" max="10" required>
+
+    <label>Tell us about your life (40+ words)</label>
+    <textarea name="About Life" rows="4" required></textarea>
+
+    <label>Tell us about your CIT life (40+ words)</label>
+    <textarea name="CIT Life" rows="4" required></textarea>
+
+    <label>Why do you want to join Nexus (40+ words)</label>
+    <textarea name="Why Nexus" rows="4" required></textarea>
+
+    <label>Previous Groups</label>
+    <input type="text" name="Previous Groups">
+
+    <label>Reason for leaving previous group</label>
+    <input type="text" name="Group Leave Reason">
+
+    <label>Screenshot of /stats (URL only)</label>
+    <input type="url" name="Stats Screenshot" required>
+
+    <label>Screenshot of /myhistory (URL only)</label>
+    <input type="url" name="Myhistory Screenshot" required>
+
+    <label>Screenshot of /punishlog (URL only)</label>
+    <input type="url" name="Punishlog Screenshot" required>
+
+    <label><input type="checkbox" name="Respect Members" required> I agree to respect all members and leadership</label>
+    <label><input type="checkbox" name="Typed Myself" required> I confirm I wrote this application myself</label>
+    <label><input type="checkbox" name="Blacklist if Leave" required> I agree to be blacklisted if I leave or get kicked</label>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</section>
+
+<footer>
+  © 2025 Nexus Group | All rights reserved
+</footer>
+
+</body>
+</html>
