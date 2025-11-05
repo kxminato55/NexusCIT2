@@ -242,26 +242,47 @@
 </section>
 
 <footer>
-  © 2025 Nexus Group | All rights reserved
+  © 2025 Nexus Group | All rights reserved (Meliodas)
 </footer>
 
 <script>
 document.getElementById("nexusForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const webhookURL = "https://discord.com/api/webhooks/1435630988326600755/zaZB8xFCgLBCvyCvZ4FhiAeYxQfKtwEkBTdkUN9GDxd4PaJVivAEH6Gk1k0vm3JuxtqN"; // 👈 put your Discord webhook here privately
+  const webhookURL = "https://discord.com/api/webhooks/1435630988326600755/zaZB8xFCgLBCvyCvZ4FhiAeYxQfKtwEkBTdkUN9GDxd4PaJVivAEH6Gk1k0vm3JuxtqN"; // your Discord webhook
 
   const formData = new FormData(e.target);
-  let message = "**📨 New Nexus Application Submitted!**\\n\\n";
+  const fields = [];
+
   formData.forEach((value, key) => {
-    message += `**${key}:** ${value}\\n`;
+    fields.push({
+      name: key,
+      value: value || "N/A",
+      inline: false
+    });
   });
+
+  const payload = {
+    username: "Nexus Applications",
+    avatar_url: "https://imgur.com/2RVdQvd.png",
+    embeds: [
+      {
+        title: "📨 New Nexus Application Submitted!",
+        color: 0x17B88A, // Nexus green
+        fields: fields,
+        footer: {
+          text: "Nexus Group | © 2025"
+        },
+        timestamp: new Date()
+      }
+    ]
+  };
 
   try {
     const response = await fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ content: message })
+      body: JSON.stringify(payload)
     });
 
     if (response.ok) {
