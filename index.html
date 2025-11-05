@@ -193,7 +193,7 @@
 <section id="application">
   <h2>📝 Application Form</h2>
 
-  <form action="https://formsubmit.co/5aa128a8f2207e88aa877a93f94dc8cd" method="POST">
+  <form id="nexusForm">
     <label>Account Name</label>
     <input type="text" name="Account Name" required>
 
@@ -210,13 +210,13 @@
     <input type="number" name="English Skills" min="0" max="10" required>
 
     <label>Tell us about your life (40+ words)</label>
-    <textarea name="About Life" rows="4" min="40" max="100" required></textarea>
+    <textarea name="About Life" rows="4" required></textarea>
 
     <label>Tell us about your CIT life (40+ words)</label>
-    <textarea name="CIT Life" rows="4" min="40" max="100" required></textarea>
+    <textarea name="CIT Life" rows="4" required></textarea>
 
     <label>Why do you want to join Nexus (40+ words)</label>
-    <textarea name="Why Nexus" rows="4" min="40" max="100" required></textarea>
+    <textarea name="Why Nexus" rows="4" required></textarea>
 
     <label>Previous Groups</label>
     <input type="text" name="Previous Groups">
@@ -242,8 +242,40 @@
 </section>
 
 <footer>
-  © 2025 Nexus Group | All rights reserved to Meliodas
+  © 2025 Nexus Group | All rights reserved
 </footer>
+
+<script>
+document.getElementById("nexusForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const webhookURL = "https://discord.com/api/webhooks/1435630988326600755/zaZB8xFCgLBCvyCvZ4FhiAeYxQfKtwEkBTdkUN9GDxd4PaJVivAEH6Gk1k0vm3JuxtqN"; // 👈 put your Discord webhook here privately
+
+  const formData = new FormData(e.target);
+  let message = "**📨 New Nexus Application Submitted!**\\n\\n";
+  formData.forEach((value, key) => {
+    message += `**${key}:** ${value}\\n`;
+  });
+
+  try {
+    const response = await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: message })
+    });
+
+    if (response.ok) {
+      alert("✅ Your application has been submitted!");
+      e.target.reset();
+    } else {
+      alert("⚠️ Failed to send application. Please try again.");
+    }
+  } catch (err) {
+    alert("❌ Error sending application.");
+    console.error(err);
+  }
+});
+</script>
 
 </body>
 </html>
