@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Tasks & Rewards</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #17B88A;
+      --background: #0e0e0e;
+      --surface: #161616;
+      --text: #fff;
+      --muted: #aaa;
+    }
+
+    * {margin:0;padding:0;box-sizing:border-box;}
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    header img {
+      max-width: 90%;
+      height: auto;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 12px 0;
+      text-align: center;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    nav a {
+      color: var(--primary);
+      margin: 0 20px;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #13a074;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 20px;
+      font-size: 26px;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(23,184,138,0.6);
+    }
+
+    h3 {
+      color: var(--primary);
+      margin: 25px 0 10px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .center {text-align:center;}
+    .task-img {
+      display:block;
+      max-width:100%;
+      height:auto;
+      margin:20px auto;
+      border-radius:10px;
+    }
+
+    .reward-section {
+      background: var(--surface);
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    ul {
+      list-style: square;
+      padding-left: 30px;
+      margin-top: 10px;
+    }
+
+    li {margin:8px 0;}
+
+    .green {color: #17B88A; font-weight: bold;}
+
+    form {
+      background: var(--surface);
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    label {
+      display:block;
+      margin:15px 0 5px;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      background: #222;
+      border: 1px solid #333;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    textarea {resize: vertical;}
+
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 14px 24px;
+      font-size: 16px;
+      border-radius: 6px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {background-color: #139a72;}
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://imgur.com/2RVdQvd.png" alt="Nexus Banner">
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="tasks.html">Tasks & Rewards</a>
+</nav>
+
+<section>
+  <h2>🎯 Nexus Tasks & Rewards</h2>
+
+  <div class="center">
+    <img src="https://imgur.com/ayWBP3H.png" alt="Tasks Header" class="task-img">
+    <img src="https://i.imgur.com/amjXJ4M.png" alt="Divider" class="task-img">
+    <img src="https://imgur.com/TgZ8JzS.png" alt="Rules" class="task-img">
+  </div>
+
+  <div class="reward-section">
+    <h3>📜 Rules & Notes</h3>
+    <ul>
+      <li>Rewards are only exclusive to Nexus members.</li>
+      <li>Do not bother any Leader to check your request directly after posting it — please be patient.</li>
+      <li>The completed task(s) should not exceed 24 hours to be reported.</li>
+      <li>Provide clear and reliable evidence of your task accomplishment.</li>
+      <li>Only Trusted+ members can claim rewards.</li>
+    </ul>
+  </div>
+
+  <div class="reward-section">
+    <h3>💰 Task Rewards</h3>
+    <img src="https://imgur.com/97uTfYl.png" alt="Reputation Rewards" class="task-img">
+    <ul>
+      <li>50,000 Reputation → <span class="green">$5,000,000</span></li>
+      <li>100,000 Reputation → <span class="green">$8,000,000</span></li>
+      <li>150,000 Reputation → <span class="green">$10,000,000</span></li>
+      <li>200,000 Reputation → <span class="green">$14,000,000</span></li>
+      <li>300,000 Reputation → <span class="green">$19,500,000</span></li>
+      <li>400,000 Reputation → <span class="green">$27,500,000</span></li>
+      <li>500,000 Reputation → <span class="green">$37,500,000</span></li>
+    </ul>
+
+    <img src="https://imgur.com/nnft8N1.png" alt="Store Robbing Rewards" class="task-img">
+    <ul>
+      <li>70 Stores → <span class="green">$2,000,000</span></li>
+      <li>120 Stores → <span class="green">$3,000,000</span></li>
+      <li>180 Stores → <span class="green">$4,000,000</span></li>
+      <li>250 Stores → <span class="green">$6,000,000</span></li>
+      <li>300 Stores → <span class="green">$7,500,000</span></li>
+    </ul>
+  </div>
+
+  <div class="reward-section">
+    <h3>🎁 Request Your Reward</h3>
+    <form id="rewardForm">
+      <label>In-game Name</label>
+      <input type="text" name="In-game Name" required>
+
+      <label>Account Name</label>
+      <input type="text" name="Account Name" required>
+
+      <label>Task Completed</label>
+      <textarea name="Task Completed" rows="3" required></textarea>
+
+      <label>Screenshot Evidence (URL only)</label>
+      <input type="url" name="Screenshot" required>
+
+      <label>Total Reward (in $)</label>
+      <input type="text" name="Total Reward" required>
+
+      <button type="submit">Submit Reward Request</button>
+    </form>
+  </div>
+
+</section>
+
+<footer>
+  © 2025 Nexus Group | All rights reserved (Meliodas)
+</footer>
+
+<script>
+document.getElementById("rewardForm").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const webhookURL = "*******"; // replace with your Discord webhook
+
+  const formData = new FormData(e.target);
+  const fields = [];
+
+  formData.forEach((value, key) => {
+    fields.push({
+      name: key,
+      value: value || "N/A",
+      inline: false
+    });
+  });
+
+  const payload = {
+    username: "Nexus Rewards",
+    avatar_url: "https://imgur.com/2RVdQvd.png",
+    embeds: [
+      {
+        title: "🎉 New Reward Request Submitted!",
+        color: 0x17B88A,
+        fields: fields,
+        footer: { text: "Nexus Group | © 2025" },
+        timestamp: new Date()
+      }
+    ]
+  };
+
+  try {
+    const response = await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    if (response.ok) {
+      alert("✅ Your reward request has been submitted!");
+      e.target.reset();
+    } else {
+      alert("⚠️ Failed to send request. Please try again.");
+    }
+  } catch (err) {
+    alert("❌ Error sending request.");
+    console.error(err);
+  }
+});
+</script>
+
+</body>
+</html>
