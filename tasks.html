@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nexus Tasks & Rewards</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #17B88A;
-      --background: #0e0e0e;
-      --surface: #161616;
+      --background: #1a1a1a;
+      --surface: #2a2a2a;
       --text: #fff;
-      --muted: #aaa;
+      --muted: #bbb;
     }
 
-    * {margin:0;padding:0;box-sizing:border-box;}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Roboto', sans-serif;
@@ -36,27 +40,25 @@
 
     nav {
       background-color: #111;
-      padding: 12px 0;
+      padding: 10px 0;
       text-align: center;
-      border-bottom: 2px solid var(--primary);
     }
 
     nav a {
       color: var(--primary);
-      margin: 0 20px;
+      margin: 0 15px;
       font-weight: bold;
       text-decoration: none;
       font-family: 'Orbitron', sans-serif;
-      transition: 0.3s;
     }
 
     nav a:hover {
-      color: #13a074;
+      text-decoration: underline;
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 50px 20px;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -65,54 +67,49 @@
       color: var(--primary);
       border-bottom: 2px solid var(--primary);
       margin-bottom: 20px;
-      font-size: 26px;
-      text-align: center;
-      text-shadow: 0 0 8px rgba(23,184,138,0.6);
+      font-size: 24px;
     }
 
     h3 {
       color: var(--primary);
-      margin: 25px 0 10px;
-      text-align: center;
       font-family: 'Orbitron', sans-serif;
+      margin-bottom: 10px;
+      text-align: center;
     }
 
-    .center {text-align:center;}
-    .task-img {
-      display:block;
-      max-width:100%;
-      height:auto;
-      margin:20px auto;
-      border-radius:10px;
+    .two-columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
     }
 
-    .reward-section {
+    .card {
       background: var(--surface);
       padding: 25px;
       border-radius: 10px;
-      margin-bottom: 40px;
+      flex: 1 1 400px;
+      min-width: 300px;
     }
 
     ul {
       list-style: square;
-      padding-left: 30px;
-      margin-top: 10px;
+      padding-left: 20px;
     }
 
-    li {margin:8px 0;}
-
-    .green {color: #17B88A; font-weight: bold;}
+    li {
+      margin: 8px 0;
+    }
 
     form {
       background: var(--surface);
       padding: 30px;
       border-radius: 10px;
-      margin-top: 40px;
     }
 
     label {
-      display:block;
-      margin:15px 0 5px;
+      display: block;
+      margin: 15px 0 5px;
       color: var(--primary);
       font-weight: bold;
     }
@@ -127,7 +124,9 @@
       font-size: 14px;
     }
 
-    textarea {resize: vertical;}
+    textarea {
+      resize: vertical;
+    }
 
     button {
       background: var(--primary);
@@ -141,7 +140,9 @@
       transition: 0.3s;
     }
 
-    button:hover {background-color: #139a72;}
+    button:hover {
+      background-color: #139a72;
+    }
 
     footer {
       text-align: center;
@@ -149,12 +150,18 @@
       color: var(--muted);
       font-size: 14px;
     }
+
+    @media screen and (max-width: 768px) {
+      .two-columns {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <img src="https://imgur.com/2RVdQvd.png" alt="Nexus Banner">
+  <img src="https://imgur.com/ayWBP3H.png" alt="Nexus Tasks Banner">
 </header>
 
 <nav>
@@ -162,71 +169,119 @@
   <a href="tasks.html">Tasks & Rewards</a>
 </nav>
 
-<section>
-  <h2>🎯 Nexus Tasks & Rewards</h2>
-
-  <div class="center">
-    <img src="https://imgur.com/ayWBP3H.png" alt="Tasks Header" class="task-img">
-    <img src="https://i.imgur.com/amjXJ4M.png" alt="Divider" class="task-img">
-    <img src="https://imgur.com/TgZ8JzS.png" alt="Rules" class="task-img">
-  </div>
-
-  <div class="reward-section">
-    <h3>📜 Rules & Notes</h3>
+<section id="rules">
+  <h2>📜 Tasks Rules</h2>
+  <div class="card">
     <ul>
-      <li>Rewards are only exclusive to Nexus members.</li>
-      <li>Do not bother any Leader to check your request directly after posting it — please be patient.</li>
-      <li>The completed task(s) should not exceed 24 hours to be reported.</li>
-      <li>Provide clear and reliable evidence of your task accomplishment.</li>
-      <li>Only Trusted+ members can claim rewards.</li>
+      <li>Rewards are exclusive to Nexus members only.</li>
+      <li>Do not bother any leader to check your request; be patient.</li>
+      <li>Tasks must be reported within 24 hours of completion.</li>
+      <li>Provide clear and reliable evidence (screenshots, logs, etc.).</li>
+      <li>Only Trusted+ members are eligible for rewards.</li>
     </ul>
   </div>
+</section>
 
-  <div class="reward-section">
-    <h3>💰 Task Rewards</h3>
-    <img src="https://imgur.com/97uTfYl.png" alt="Reputation Rewards" class="task-img">
-    <ul>
-      <li>50,000 Reputation → <span class="green">$5,000,000</span></li>
-      <li>100,000 Reputation → <span class="green">$8,000,000</span></li>
-      <li>150,000 Reputation → <span class="green">$10,000,000</span></li>
-      <li>200,000 Reputation → <span class="green">$14,000,000</span></li>
-      <li>300,000 Reputation → <span class="green">$19,500,000</span></li>
-      <li>400,000 Reputation → <span class="green">$27,500,000</span></li>
-      <li>500,000 Reputation → <span class="green">$37,500,000</span></li>
-    </ul>
+<section id="tasks">
+  <h2>💰 Tasks & Rewards</h2>
 
-    <img src="https://imgur.com/nnft8N1.png" alt="Store Robbing Rewards" class="task-img">
-    <ul>
-      <li>70 Stores → <span class="green">$2,000,000</span></li>
-      <li>120 Stores → <span class="green">$3,000,000</span></li>
-      <li>180 Stores → <span class="green">$4,000,000</span></li>
-      <li>250 Stores → <span class="green">$6,000,000</span></li>
-      <li>300 Stores → <span class="green">$7,500,000</span></li>
-    </ul>
+  <div class="two-columns">
+    <div class="card">
+      <h3>🏆 Reputation Tasks</h3>
+      <ul>
+        <li>50,000 Reputation Points — <b>$1,500,000</b></li>
+        <li>100,000 Reputation Points — <b>$3,500,000</b></li>
+        <li>150,000 Reputation Points — <b>$5,000,000</b></li>
+        <li>200,000 Reputation Points — <b>$7,000,000</b></li>
+        <li>300,000 Reputation Points — <b>$9,000,000</b></li>
+        <li>400,000 Reputation Points — <b>$11,500,000</b></li>
+        <li>500,000 Reputation Points — <b>$20,000,000</b></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>💣 Store Robberies</h3>
+      <ul>
+        <li>Rob 70 Stores — <b>$2,000,000</b></li>
+        <li>Rob 120 Stores — <b>$3,000,000</b></li>
+        <li>Rob 180 Stores — <b>$4,000,000</b></li>
+        <li>Rob 250 Stores — <b>$6,000,000</b></li>
+        <li>Rob 300 Stores — <b>$7,500,000</b></li>
+      </ul>
+    </div>
   </div>
 
-  <div class="reward-section">
-    <h3>🎁 Request Your Reward</h3>
-    <form id="rewardForm">
-      <label>In-game Name</label>
-      <input type="text" name="In-game Name" required>
+  <div class="two-columns">
+    <div class="card">
+      <h3>🏠 House Robberies</h3>
+      <ul>
+        <li>100 Houses — <b>$2,500,000</b></li>
+        <li>200 Houses — <b>$4,500,000</b></li>
+        <li>300 Houses — <b>$8,000,000</b></li>
+        <li>500 Houses — <b>$11,000,000</b></li>
+      </ul>
+    </div>
 
-      <label>Account Name</label>
-      <input type="text" name="Account Name" required>
-
-      <label>Task Completed</label>
-      <textarea name="Task Completed" rows="3" required></textarea>
-
-      <label>Screenshot Evidence (URL only)</label>
-      <input type="url" name="Screenshot" required>
-
-      <label>Total Reward (in $)</label>
-      <input type="text" name="Total Reward" required>
-
-      <button type="submit">Submit Reward Request</button>
-    </form>
+    <div class="card">
+      <h3>🚨 APB Tasks</h3>
+      <ul>
+        <li>1 APB — <b>$2,000,000</b></li>
+        <li>2 APBs — <b>$4,000,000</b></li>
+        <li>3 APBs — <b>$8,000,000</b></li>
+        <li>5 APBs — <b>$12,000,000</b></li>
+      </ul>
+    </div>
   </div>
 
+  <div class="two-columns">
+    <div class="card">
+      <h3>🔥 Top Performance Rewards</h3>
+      <ul>
+        <li>Top Criminal Operative — <b>$1,000,000</b></li>
+        <li>Top Trouble Maker — <b>$1,000,000</b></li>
+        <li>Top Houses Robber — <b>$500,000</b></li>
+        <li>Top Stores Robber — <b>$1,000,000</b></li>
+        <li>Top Heists / Cop Killer — <b>$1,000,000</b></li>
+        <li>Top APB Times — <b>$1,000,000</b></li>
+        <li>Top Hijack — <b>$500,000</b></li>
+        <li>Top Turf Defender — <b>$1,000,000</b></li>
+        <li>Top Turfer — <b>$1,000,000</b></li>
+        <li>Top Kills — <b>$3,000,000</b></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>⚔️ AR / CE Kill Tasks</h3>
+      <ul>
+        <li>5 kills in AR — <b>$700,000</b></li>
+        <li>5 kills in CE — <b>$850,000</b></li>
+        <li>10 kills in AR — <b>$3,500,000</b></li>
+        <li>10 kills in CE — <b>$4,500,000</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="request">
+  <h2>📨 Request Reward</h2>
+  <form id="rewardForm">
+    <label>Your In-Game Name</label>
+    <input type="text" name="In-Game Name" required>
+
+    <label>Your Account Name</label>
+    <input type="text" name="Account Name" required>
+
+    <label>Daily Task Completed</label>
+    <input type="text" name="Task Completed" required>
+
+    <label>Screenshot(s) (URL)</label>
+    <input type="url" name="Screenshots" required>
+
+    <label>Total Paying Tasks</label>
+    <input type="text" name="Total Paying Tasks" required>
+
+    <button type="submit">Submit Request</button>
+  </form>
 </section>
 
 <footer>
@@ -237,28 +292,32 @@
 document.getElementById("rewardForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const webhookURL = "*******"; // replace with your Discord webhook
+  const webhookURL = "https://discord.com/api/webhooks/1436316192443994254/_SbX1teoxOmxoHJegPbycA0FkFpWwoVsdwNVcdziav9tROnGVAXuZ4BnH1D0JIBGwc0g"; // Replace with your Discord webhook
 
   const formData = new FormData(e.target);
   const fields = [];
 
   formData.forEach((value, key) => {
     fields.push({
-      name: key,
+      name: `**${key}**`,
       value: value || "N/A",
       inline: false
     });
   });
 
   const payload = {
-    username: "Nexus Rewards",
-    avatar_url: "https://imgur.com/2RVdQvd.png",
+    username: "Nexus Tasks & Rewards",
+    avatar_url: "https://imgur.com/ayWBP3H.png",
     embeds: [
       {
-        title: "🎉 New Reward Request Submitted!",
-        color: 0x17B88A,
+        title: "🎁 New Reward Request Submitted",
+        description: "A member has submitted a task completion request. Please review it carefully.",
+        color: 0x17B88A, // Nexus green
         fields: fields,
-        footer: { text: "Nexus Group | © 2025" },
+        footer: {
+          text: "Nexus Group | Professional Task Reporting",
+          icon_url: "https://imgur.com/ayWBP3H.png"
+        },
         timestamp: new Date()
       }
     ]
@@ -275,7 +334,7 @@ document.getElementById("rewardForm").addEventListener("submit", async function(
       alert("✅ Your reward request has been submitted!");
       e.target.reset();
     } else {
-      alert("⚠️ Failed to send request. Please try again.");
+      alert("⚠️ Failed to send. Please try again.");
     }
   } catch (err) {
     alert("❌ Error sending request.");
