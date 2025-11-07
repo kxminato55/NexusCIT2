@@ -288,57 +288,72 @@
   © 2025 Nexus Group | All rights reserved (Meliodas)
 </footer>
 
+
 <script>
 document.getElementById("rewardForm").addEventListener("submit", async function(e) {
   e.preventDefault();
 
-  const webhookURL = "https://discord.com/api/webhooks/1436316192443994254/_SbX1teoxOmxoHJegPbycA0FkFpWwoVsdwNVcdziav9tROnGVAXuZ4BnH1D0JIBGwc0g"; // Replace with your Discord webhook
+  const reviewWebhook = "https://discord.com/api/webhooks/1436316192443994254/_SbX1teoxOmxoHJegPbycA0FkFpWwoVsdwNVcdziav9tROnGVAXuZ4BnH1D0JIBGwc0g"; // Admin review
+  const forumWebhook = "https://discord.com/api/webhooks/1436336116247826605/bn7CBoR49EUFIFcz7iDEpwg0S43qilJoymlKE_EAEwPhwW67XQuwH2dWfyR5zhwdyCuv";   // Optional, or same webhook
 
   const formData = new FormData(e.target);
-  const fields = [];
 
+  // Build fields for admin embed
+  const fields = [];
   formData.forEach((value, key) => {
     fields.push({
-      name: `**${key}**`,
+      name: key,
       value: value || "N/A",
       inline: false
     });
   });
 
-  const payload = {
+  // Build forum-ready BBCode
+  let forumText = `[center][img]https://imgur.com/WjNgVJv.png[/img][/center]\n`;
+  formData.forEach((value, key) => {
+    forumText += `• [b][font=georgia]${key}[/font][/b]: ${value || "-"}\n`;
+  });
+
+  // 1️⃣ Admin embed payload
+  const reviewPayload = {
     username: "Nexus Tasks & Rewards",
     avatar_url: "https://imgur.com/ayWBP3H.png",
     embeds: [
       {
         title: "🎁 New Reward Request Submitted",
         description: "A member has submitted a task completion request. Please review it carefully.",
-        color: 0x17B88A, // Nexus green
+        color: 0x17B88A,
         fields: fields,
-        footer: {
-          text: "Nexus Group | Professional Task Reporting",
-          icon_url: "https://imgur.com/ayWBP3H.png"
-        },
+        footer: { text: "Nexus Group | Professional Task Reporting", icon_url: "https://imgur.com/ayWBP3H.png" },
         timestamp: new Date()
       }
     ]
   };
 
+  // 2️⃣ Forum-ready payload
+  const forumPayload = { content: forumText };
+
   try {
-    const response = await fetch(webhookURL, {
+    // Send review embed
+    await fetch(reviewWebhook, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(reviewPayload)
     });
 
-    if (response.ok) {
-      alert("✅ Your reward request has been submitted!");
-      e.target.reset();
-    } else {
-      alert("⚠️ Failed to send. Please try again.");
-    }
+    // Send forum-ready text
+    await fetch(forumWebhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(forumPayload)
+    });
+
+    alert("✅ Reward request submitted! Moderator can now copy the forum message from Discord.");
+    e.target.reset();
+
   } catch (err) {
-    alert("❌ Error sending request.");
     console.error(err);
+    alert("❌ Error sending request.");
   }
 });
 </script>
