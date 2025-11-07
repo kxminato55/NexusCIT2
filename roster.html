@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Roster</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #17B88A;
+      --background: #0e0e0e;
+      --surface: #161616;
+      --text: #fff;
+      --muted: #aaa;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    header img {
+      max-width: 90%;
+      height: auto;
+    }
+
+    nav {
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      font-weight: bold;
+      text-decoration: none;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 20px;
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .roster-img {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .rank-section {
+      background: var(--surface);
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+    }
+
+    button.toggle {
+      background: var(--primary);
+      border: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      margin: 15px 0;
+      transition: 0.3s;
+    }
+
+    button.toggle:hover {
+      background-color: #139a72;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://imgur.com/2RVdQvd.png" alt="Nexus Banner">
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="roster.html">Roster</a>
+</nav>
+
+<section>
+  <h2>⚔️ Nexus Group Ranks & Roster</h2>
+
+  <div class="center">
+    <img src="https://imgur.com/hZCdP6t.png" alt="Ranks Banner" class="roster-img">
+    <img src="https://imgur.com/yTmZ0uc.png" alt="Online Members" class="roster-img">
+    <img src="https://sanderc.net/img/onlinemembers.php?group=Nexus" alt="Current Online Members" class="roster-img">
+  </div>
+
+  <div class="center">
+    <button class="toggle" onclick="toggleSpoiler()">Show/Hide Detailed Map</button>
+  </div>
+
+  <div id="spoiler" class="hidden center">
+    <hr>
+    <img src="http://cit2.net/mike/online/whoisonlinemap.php?group=Nexus" alt="Online Map" class="roster-img">
+    <hr>
+    <img src="https://sanderc.net/img/people.php?group=Nexus" alt="Member List" class="roster-img">
+  </div>
+
+  <div class="rank-section">
+    <div class="center">
+      <img src="https://imgur.com/kndOrpm.png" alt="Leaders" class="roster-img">
+      <p>🇪🇬 JFX | 🇪🇬 Walker | 🇹🇳 Ash</p>
+
+      <img src="https://imgur.com/lENdaex.png" alt="Vice Leaders" class="roster-img">
+      <p>🇩🇿 VX</p>
+
+      <img src="https://imgur.com/wIhSFhr.png" alt="High Council" class="roster-img">
+      <p>🇲🇦 Ka3ka | 🇹🇳 Axel</p>
+
+      <img src="https://imgur.com/Lx1NTDX.png" alt="Council" class="roster-img">
+      <p>🇪🇬 - | 🇩🇿 Kafi</p>
+
+      <img src="https://imgur.com/m8S2lwF.png" alt="Members" class="roster-img">
+      <p>🇱🇧 SkullX | 🇬🇧 BenC | 🇪🇬 PhantomX</p>
+
+      <hr>
+      <img src="https://imgur.com/lh3GpzD.png" alt="Recruits" class="roster-img">
+    </div>
+  </div>
+
+  <div class="center" style="margin-top:50px;">
+    <h3 style="color: var(--primary);">Application Template</h3>
+    <pre style="background:#111; color:#0f0; padding:20px; border-radius:10px; text-align:left; max-width:600px; margin:auto; font-family:monospace;">
+Name:
+Account Name:
+Your Rank:
+Country Code:
+    </pre>
+  </div>
+</section>
+
+<footer>
+  © 2025 Nexus Group | All rights reserved (Meliodas)
+</footer>
+
+<script>
+function toggleSpoiler() {
+  const spoiler = document.getElementById("spoiler");
+  spoiler.classList.toggle("hidden");
+}
+</script>
+
+</body>
+</html>
